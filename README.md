@@ -61,14 +61,16 @@ Deploy to GitHub Pages:
 npm run deploy
 ```
 
-**Note**: For GitHub Pages deployment, you need to set environment variables in your GitHub repository:
-1. Go to your repository Settings → Secrets and variables → Actions
-2. Add the following secrets:
-   - `VITE_OPENROUTER_API_KEY`
-   - `VITE_PEXELS_API_KEY`
-3. Update the GitHub Actions workflow to use these secrets
+**⚠️ Important**: Before deploying, you need to set up GitHub Secrets for API keys.
 
-Alternatively, you can set them directly in the build process (less secure but simpler for static sites).
+📖 **See detailed setup instructions**: [SETUP_GITHUB_SECRETS.md](./SETUP_GITHUB_SECRETS.md)
+
+Quick setup:
+1. Go to your repository: **Settings → Secrets and variables → Actions**
+2. Add the following secrets:
+   - `VITE_OPENROUTER_API_KEY` - Your OpenRouter API key
+   - `VITE_PEXELS_API_KEY` - Your Pexels API key (optional)
+3. The GitHub Actions workflow will automatically use these secrets during build
 
 ## 🔒 Security Notes
 
