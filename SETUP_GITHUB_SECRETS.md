@@ -1,137 +1,136 @@
-# 🔐 إعداد GitHub Secrets للنشر
+# 🔐 GitHub Secrets Setup Guide
 
-هذا الدليل يشرح كيفية إضافة API Keys كـ GitHub Secrets لتمكين النشر التلقائي على GitHub Pages.
+This guide explains how to add API Keys as GitHub Secrets to enable automatic deployment to GitHub Pages.
 
-## 📋 المتطلبات:
+## 📋 Prerequisites:
 
-- حساب GitHub مع صلاحيات إدارة المستودع
-- API Keys صالحة:
-  - OpenRouter API Key (مطلوب)
-  - Pexels API Key (اختياري)
+- GitHub account with repository management permissions
+- Valid API Keys:
+  - OpenRouter API Key (required)
+  - Pexels API Key (optional)
 
 ---
 
-## 🚀 الخطوات لإضافة API Keys كـ GitHub Secrets:
+## 🚀 Steps to Add API Keys as GitHub Secrets:
 
-### 1. افتح صفحة Secrets في GitHub:
+### 1. Open GitHub Secrets Page:
 
-**الطريقة 1: من الرابط المباشر**
-افتح الرابط التالي في المتصفح:
+**Method 1: Direct Link**
+Open the following link in your browser:
 ```
 https://github.com/ammarsouleiman/Runner_Code_AI_Platform/settings/secrets/actions
 ```
 
-**الطريقة 2: من واجهة GitHub**
-1. اذهب إلى المستودع: https://github.com/ammarsouleiman/Runner_Code_AI_Platform
-2. اضغط على **Settings** (في أعلى الصفحة)
-3. من القائمة الجانبية، اضغط على **Secrets and variables**
-4. ثم اضغط على **Actions**
+**Method 2: From GitHub Interface**
+1. Go to the repository: https://github.com/ammarsouleiman/Runner_Code_AI_Platform
+2. Click on **Settings** (at the top of the page)
+3. From the sidebar, click on **Secrets and variables**
+4. Then click on **Actions**
 
-### 2. أضف Secret الأول (OpenRouter API Key):
+### 2. Add First Secret (OpenRouter API Key):
 
-1. اضغط على زر **"New repository secret"** (في أعلى يمين الصفحة)
-2. في حقل **Name** اكتب بالضبط (بدون مسافات إضافية):
+1. Click on the **"New repository secret"** button (top right of the page)
+2. In the **Name** field, type exactly (without extra spaces):
    ```
    VITE_OPENROUTER_API_KEY
    ```
-3. في حقل **Secret** اكتب مفتاح OpenRouter API الخاص بك:
+3. In the **Secret** field, enter your OpenRouter API key:
    ```
    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
    ```
-   > 💡 **ملاحظة**: استبدل هذا المفتاح بمفتاحك الخاص من [OpenRouter](https://openrouter.ai/keys)
-4. اضغط **"Add secret"** في الأسفل
+   > 💡 **Note**: Replace this key with your own key from [OpenRouter](https://openrouter.ai/keys)
+4. Click **"Add secret"** at the bottom
 
-### 3. أضف Secret الثاني (Pexels API Key - اختياري):
+### 3. Add Second Secret (Pexels API Key - Optional):
 
-1. اضغط على زر **"New repository secret"** مرة أخرى
-2. في حقل **Name** اكتب بالضبط:
+1. Click on the **"New repository secret"** button again
+2. In the **Name** field, type exactly:
    ```
    VITE_PEXELS_API_KEY
    ```
-3. في حقل **Secret** اكتب مفتاح Pexels API الخاص بك:
+3. In the **Secret** field, enter your Pexels API key:
    ```
    OMfpYQBueRaHVMMu7QKoqF4uPbO5iuJvTUHpfitMhFNDmHZ2pbSffE7Y
    ```
-   > 💡 **ملاحظة**: هذا المفتاح اختياري - فقط إذا كنت تريد استخدام ميزة البحث عن الصور
-4. اضغط **"Add secret"**
+   > 💡 **Note**: This key is optional - only if you want to use the image search feature
+4. Click **"Add secret"**
 
-### 4. تحقق من Secrets المضافة:
+### 4. Verify Added Secrets:
 
-يجب أن ترى الآن Secretين:
+You should now see two secrets:
 - ✅ `VITE_OPENROUTER_API_KEY`
 - ✅ `VITE_PEXELS_API_KEY`
 
-### 5. النشر:
+### 5. Deployment:
 
-بعد إضافة Secrets، يمكنك النشر بطريقتين:
+After adding secrets, you can deploy in two ways:
 
-#### الطريقة 1: النشر التلقائي
-- ادفع أي تغيير إلى فرع `main` وسيعمل workflow تلقائياً
+#### Method 1: Automatic Deployment
+- Push any changes to the `main` branch and the workflow will run automatically
 
-#### الطريقة 2: النشر اليدوي
+#### Method 2: Manual Deployment
 ```bash
 npm run deploy
 ```
 
-أو من GitHub:
-- اذهب إلى تبويب **Actions**
-- اختر workflow **"Deploy to GitHub Pages"**
-- اضغط **"Run workflow"**
+Or from GitHub:
+- Go to the **Actions** tab
+- Select the **"Deploy to GitHub Pages"** workflow
+- Click **"Run workflow"**
 
 ---
 
-## ✅ بعد النشر:
+## ✅ After Deployment:
 
-بعد اكتمال النشر (عادة 2-3 دقائق)، سيكون التطبيق متاحاً على:
+After deployment completes (usually 2-3 minutes), the application will be available at:
 ```
 https://ammarsouleiman.github.io/Runner_Code_AI_Platform/
 ```
 
 ---
 
-## 🔒 ملاحظات أمان:
+## 🔒 Security Notes:
 
-- ✅ `.env.local` محمي في `.gitignore` ولن يُرفع إلى GitHub
-- ✅ API Keys موجودة فقط في GitHub Secrets (آمنة ومشفرة)
-- ✅ الكود المصدري لا يحتوي على أي مفاتيح
-- ✅ GitHub Secrets مشفرة ولا يمكن رؤيتها بعد الإضافة
-- ⚠️ **تحذير**: متغيرات `VITE_*` تُدمج في bundle JavaScript (مرئية في المتصفح)
+- ✅ `.env.local` is protected in `.gitignore` and will not be pushed to GitHub
+- ✅ API Keys exist only in GitHub Secrets (secure and encrypted)
+- ✅ Source code does not contain any keys
+- ✅ GitHub Secrets are encrypted and cannot be viewed after adding
+- ⚠️ **Warning**: `VITE_*` variables are embedded in the JavaScript bundle (visible in the browser)
 
-## 🔄 تحديث Secrets:
+## 🔄 Updating Secrets:
 
-إذا أردت تحديث API Key:
-1. اذهب إلى صفحة Secrets
-2. اضغط على Secret الذي تريد تحديثه
-3. اضغط **"Update"** وأدخل القيمة الجديدة
+If you want to update an API Key:
+1. Go to the Secrets page
+2. Click on the Secret you want to update
+3. Click **"Update"** and enter the new value
 
-## ❌ حذف Secrets:
+## ❌ Deleting Secrets:
 
-إذا أردت حذف Secret:
-1. اذهب إلى صفحة Secrets
-2. اضغط على Secret الذي تريد حذفه
-3. اضغط **"Delete"** وتأكد من الحذف
-
----
-
-## 🆘 حل المشاكل:
-
-### المشكلة: Workflow يفشل مع خطأ "401 Unauthorized"
-**الحل**: تأكد من أن:
-- Secret name صحيح تماماً: `VITE_OPENROUTER_API_KEY`
-- API Key صحيح وغير منتهي الصلاحية
-- تم إضافة Secret في المكان الصحيح (Actions secrets)
-
-### المشكلة: التطبيق لا يعمل بعد النشر
-**الحل**: 
-- تحقق من أن Secrets موجودة
-- تحقق من logs في تبويب Actions
-- تأكد من أن workflow اكتمل بنجاح
+If you want to delete a Secret:
+1. Go to the Secrets page
+2. Click on the Secret you want to delete
+3. Click **"Delete"** and confirm deletion
 
 ---
 
-## 📚 روابط مفيدة:
+## 🆘 Troubleshooting:
+
+### Issue: Workflow fails with "401 Unauthorized" error
+**Solution**: Make sure:
+- Secret name is exactly correct: `VITE_OPENROUTER_API_KEY`
+- API Key is correct and not expired
+- Secret was added in the correct location (Actions secrets)
+
+### Issue: Application doesn't work after deployment
+**Solution**: 
+- Check that Secrets exist
+- Check logs in the Actions tab
+- Make sure the workflow completed successfully
+
+---
+
+## 📚 Useful Links:
 
 - [GitHub Secrets Documentation](https://docs.github.com/en/actions/security-guides/encrypted-secrets)
 - [OpenRouter API Keys](https://openrouter.ai/keys)
 - [Pexels API](https://www.pexels.com/api/)
-
