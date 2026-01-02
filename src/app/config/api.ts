@@ -1,5 +1,6 @@
 // OpenRouter API Configuration
-export const API_KEY = "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";
+// API Key is loaded from environment variables for security
+export const API_KEY = import.meta.env.VITE_OPENROUTER_API_KEY || "";
 export const API_URL = "https://openrouter.ai/api/v1/chat/completions";
 
 // Default model to use - Best balance of speed, cost, and quality
@@ -23,5 +24,6 @@ export const AVAILABLE_MODELS = [
 ];
 
 // Pexels API Configuration (for image generation)
-export const PEXELS_API_KEY = "OMfpYQBueRaHVMMu7QKoqF4uPbO5iuJvTUHpfitMhFNDmHZ2pbSffE7Y";
+// API Key is loaded from environment variables for security
+export const PEXELS_API_KEY = import.meta.env.VITE_PEXELS_API_KEY || "";
 export const PEXELS_API_URL = "https://api.pexels.com/v1/search";

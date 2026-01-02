@@ -2,20 +2,20 @@
   "name": "Runner Code AI",
   "short_name": "Runner Code AI",
   "description": "Elite AI Coding Assistant - Your intelligent companion for programming excellence",
-  "start_url": "/",
+  "start_url": "/Runner_Code_AI_Platform/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#E31E24",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/logo.png",
+      "src": "/Runner_Code_AI_Platform/logo.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/logo.png",
+      "src": "/Runner_Code_AI_Platform/logo.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
