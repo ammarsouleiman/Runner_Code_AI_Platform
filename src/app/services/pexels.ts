@@ -1,7 +1,6 @@
 // Pexels API Service for fetching images
-import { PEXELS_API_KEY, PEXELS_API_URL } from "../config/api";
-
-const API_KEY = PEXELS_API_KEY;
+const API_KEY = "OMfpYQBueRaHVMMu7QKoqF4uPbO5iuJvTUHpfitMhFNDmHZ2pbSffE7Y";
+const PEXELS_API_URL = "https://api.pexels.com/v1/search";
 
 export interface PexelsPhoto {
   id: number;
